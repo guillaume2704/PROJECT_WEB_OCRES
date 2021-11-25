@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import Dog from "./components/Dog";
+import Food from "./components/Food";
 import Profile from "./components/Profile";
 import Stars from './components/Stars';
 // import ReactDOM from "react-dom";
@@ -8,7 +8,7 @@ import Stars from './components/Stars';
 
 
 var urls = [
-  'https://dog.ceo/api/breeds/image/random',
+  "https://foodish-api.herokuapp.com/api/",
   "https://jsonplaceholder.typicode.com/posts/1",
   "https://api.nasa.gov/planetary/apod?api_key=g5OQbgckhrUaLRMKNcNVRYtKuCmj41mvfTLhRe3T",
   "https://api.github.com/users/defunkt",
@@ -29,7 +29,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      dog: [],
+      food: [],
       api1: [],
       nasa: [],
       users: [],
@@ -46,13 +46,13 @@ class App extends React.Component {
         .catch(error => console.log('There was a problem!', error))
     ))
       .then((data) => {
-        const data_dog = data[0]
+        const data_food = data[0]
         const data_api1 = data[1];
         const data_nasa = data[2];
         const data_user = data[3];
         this.setState({
           isLoaded: true,
-          dog: data_dog,
+          food: data_food,
           api1: data_api1,
           nasa: data_nasa,
           users: data_user,
@@ -62,10 +62,11 @@ class App extends React.Component {
 
   }
   render() {
-    var { dog, nasa, users } = this.state;
+    var { food, nasa, users } = this.state;
     return (
       <div>
         <div className="App">
+          
           <Profile
             item={users}
           />
@@ -73,8 +74,8 @@ class App extends React.Component {
             item={nasa}
           />
 
-          <Dog
-            item={dog}
+          <Food
+            item={food}
           />
         </div>
 
