@@ -1,10 +1,12 @@
 import React from 'react';
 import './App.css';
 
+
+
 var urls = [
   "https://jsonplaceholder.typicode.com/posts/1",
    "https://api.nasa.gov/planetary/apod?api_key=g5OQbgckhrUaLRMKNcNVRYtKuCmj41mvfTLhRe3T",
-   "https://randomuser.me/api/"
+   "https://api.github.com/users/defunkt",
 ]
 function checkStatus(response) {
   if (response.ok) {
@@ -52,13 +54,16 @@ class App extends React.Component {
 
   }
   render() {
+
     return (
       <div>
         <div className="App">
-          <h1>La dernière blague : </h1>
+          <h1>API 1 : </h1>
           {this.state.api1.body}
+          <h1>API 2 : </h1>
           {this.state.api2.copyright}
-          {this.state.api3.results.map(=>(<h1 key={0}>{gender}</h1>))}
+          <h1>API 3 : </h1>
+          <img src={this.state.api3.avatar_url}></img>
         </div>
       </div>
     );
