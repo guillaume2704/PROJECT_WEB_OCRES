@@ -1,17 +1,19 @@
+
 import React from 'react';
 import './App.css';
 import Food from "./components/Food";
 import Profile from "./components/Profile";
 import Stars from './components/Stars';
+import Cars from './components/Cars';
+import Graphe from './components/Graphe';
 // import ReactDOM from "react-dom";
-
-
 
 var urls = [
   "https://foodish-api.herokuapp.com/api/",
   "https://jsonplaceholder.typicode.com/posts/1",
   "https://api.nasa.gov/planetary/apod?api_key=g5OQbgckhrUaLRMKNcNVRYtKuCmj41mvfTLhRe3T",
   "https://api.github.com/users/defunkt",
+  "https://forza-api.tk/",
 ]
 function checkStatus(response) {
   if (response.ok) {
@@ -33,6 +35,8 @@ class App extends React.Component {
       api1: [],
       nasa: [],
       users: [],
+      cars: [],
+      graphe: [],
       isLoaded: false,
     }
   }
@@ -50,26 +54,32 @@ class App extends React.Component {
         const data_api1 = data[1];
         const data_nasa = data[2];
         const data_user = data[3];
+        const data_cars = data[4];
         this.setState({
           isLoaded: true,
           food: data_food,
           api1: data_api1,
           nasa: data_nasa,
           users: data_user,
+          cars: data_cars,
         })
         console.log(this.state);
       })
 
   }
+
   render() {
-    var { food, nasa, users } = this.state;
+    var { food, nasa, users, cars, graphe } = this.state;
     return (
       <div>
+
+        
         <div className="App">
           
           <Profile
             item={users}
           />
+          <div class="side_box2"></div>
           <Stars
             item={nasa}
           />
@@ -77,11 +87,23 @@ class App extends React.Component {
           <Food
             item={food}
           />
+
+           <Cars
+            item={cars}
+          />
+
+            <Graphe
+            item={graphe}
+            />
+          
         </div>
 
       </div>
+      
     );
   }
 }
+
+
 
 export default App;
