@@ -4,7 +4,9 @@ import Food from "./components/Food";
 import Profile from "./components/Profile";
 import Stars from './components/Stars';
 import Cars from './components/Cars';
-// import ReactDOM from "react-dom";
+import Graphe from './components/Graphe';
+import Formulaire from './components/Formulaire';
+// import ReactDOM from "react-dom"; 
 
 
 
@@ -36,6 +38,7 @@ class App extends React.Component {
       nasa: [],
       users: [],
       cars: [],
+      graphe: [],
       isLoaded: false,
     }
   }
@@ -67,26 +70,67 @@ class App extends React.Component {
 
   }
   render() {
-    var { food, nasa, users, cars } = this.state;
+    var { food, nasa, users, cars, graphe } = this.state;
     return (
-      <div>
-        <div className="App">
 
-          <Profile
-            item={users}
-          />
-          <Stars
-            item={nasa}
-          />
-          <Food
-            item={food}
-          />
-          <Cars
-            item={cars}
-          />
+      <div className="App">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-4 col-sm-4 col-md-3 col-lg-3 col-xl-3">
+              <Profile
+                item={users}
+              />
+            </div>
+
+            <div class="col-8 col-sm-8 col-md-9 col-lg-9 col-xl-9">
+              <div class="container-fluid">
+                <div class="row">
+
+                  <div class="col-11 col-sm-11 col-md-6 col-lg-6 col-xl-6">
+                    <Stars
+                      item={nasa}
+                    />
+                  </div>
+
+                  <div class="col-11 col-sm-11 col-md-6 col-lg-6 col-xl-6">
+                    <Food
+                      item={food}
+                    />
+                  </div>
+
+                  {/* <div class="w-100"></div> */}
+                  <div class="col-11 ccol-sm-11 col-md-6 col-lg-6 col-xl-6">
+                    <Cars
+                      item={cars}
+                    />
+                  </div>
+
+                  <div class="col-11 col-sm-11 col-md-6 col-lg-6 col-xl-6">
+                    <Graphe
+                      item={graphe}
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-11 col-sm-11 col-md-11 col-lg-11 col-xl-11">
+              <div class="mid_box">
+                API 6 Backend
+                <br /> <br /> <br /> <br />
+              </div>
+            </div>
+          </div>
+
+
+          {/* <Formulaire */}
+          {/* /> */}
+
         </div>
-
       </div>
+
     );
   }
 }
