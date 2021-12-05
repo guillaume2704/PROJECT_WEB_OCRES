@@ -5,7 +5,6 @@ import Profile from "./components/Profile";
 import Stars from './components/Stars';
 import Cars from './components/Cars';
 import Graphe from './components/Graphe';
-import Formulaire from './components/Formulaire';
 // import ReactDOM from "react-dom"; 
 
 
@@ -52,7 +51,7 @@ class App extends React.Component {
         .catch(error => console.log('There was a problem!', error))
     ))
       .then((data) => {
-        const data_food = data[0]
+        const data_food = data[0];
         const data_api1 = data[1];
         const data_nasa = data[2];
         const data_user = data[3];
@@ -129,7 +128,8 @@ class App extends React.Component {
           {/* /> */}
 
         </div>
-      </div>
+
+      </div >
 
     );
   }

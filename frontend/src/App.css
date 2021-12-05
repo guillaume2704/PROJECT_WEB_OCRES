@@ -167,9 +167,10 @@ h3
   ); 
   background: linear-gradient(-90deg, #6992B0, #28C2C8); 
 	border-color: white;
-          width: 100%;        
-	   /* width: 20em;           */
-	    /* height: 14em;           */
+            width: 90%;          
+
+	     /* width:20rem  ;            */
+	       /* height: 14em;              */
   padding-top: 0.2em;
   padding-bottom: 0.9em;
   margin : 1em;
@@ -205,8 +206,9 @@ h3
   ); 
   background: linear-gradient(-90deg, #6992B0, #28C2C8); 
 	border-color: white;
-	width: 75em;
-	height: 18em;
+	/* width: 75em; */
+	/* height: 18em; */
+  width : 90%;
   padding-top: 0.2em;
   margin : 2em;
 	text-align: center;
@@ -227,3 +229,18 @@ h3
   border-radius: 20em;
 }
 
+nav 
+{
+  text-align : center ;
+
+}
+
+.BarChart
+{
+  width: 90%;
+}
+
+.CartesianGrid
+{
+  width: 90%;
+}
