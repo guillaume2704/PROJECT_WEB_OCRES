@@ -167,7 +167,7 @@ h3
   ); 
   background: linear-gradient(-90deg, #6992B0, #28C2C8); 
 	border-color: white;
-            width: 90%;          
+            width: 95%;          
 
 	     /* width:20rem  ;            */
 	       /* height: 14em;              */
@@ -233,6 +233,16 @@ nav
 {
   text-align : center ;
 
+}
+
+.bouton
+{
+ color: white;
+}
+
+.navigation
+{
+  background-color: lightgrey;
 }
 
 .BarChart

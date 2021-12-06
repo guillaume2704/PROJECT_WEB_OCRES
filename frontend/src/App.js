@@ -75,36 +75,36 @@ class App extends React.Component {
       <div className="App">
         <div class="container-fluid">
           <div class="row">
-            <div class="col-4 col-sm-4 col-md-3 col-lg-3 col-xl-3">
+            <div class="col-11 col-sm-4 col-md-3 col-lg-3 col-xl-3">
               <Profile
                 item={users}
               />
             </div>
 
-            <div class="col-8 col-sm-8 col-md-9 col-lg-9 col-xl-9">
+            <div class="col-11 col-sm-8 col-md-9 col-lg-9 col-xl-9">
               <div class="container-fluid">
                 <div class="row">
 
-                  <div class="col-11 col-sm-11 col-md-6 col-lg-6 col-xl-6">
+                  <div class="col-12 col-sm-11 col-md-6 col-lg-6 col-xl-6">
                     <Stars
                       item={nasa}
                     />
                   </div>
 
-                  <div class="col-11 col-sm-11 col-md-6 col-lg-6 col-xl-6">
+                  <div class="col-12 col-sm-11 col-md-6 col-lg-6 col-xl-6">
                     <Food
                       item={food}
                     />
                   </div>
 
                   {/* <div class="w-100"></div> */}
-                  <div class="col-11 ccol-sm-11 col-md-6 col-lg-6 col-xl-6">
+                  <div class="col-12 ccol-sm-11 col-md-6 col-lg-6 col-xl-6">
                     <Cars
                       item={cars}
                     />
                   </div>
 
-                  <div class="col-11 col-sm-11 col-md-6 col-lg-6 col-xl-6">
+                  <div class="col-12 col-sm-11 col-md-6 col-lg-6 col-xl-6">
                     <Graphe
                       item={graphe}
                     />
@@ -115,7 +115,7 @@ class App extends React.Component {
           </div>
 
           <div class="row">
-            <div class="col-11 col-sm-11 col-md-11 col-lg-11 col-xl-11">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
               <div class="mid_box">
                 API 6 Backend
                 <br /> <br /> <br /> <br />

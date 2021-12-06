@@ -6,7 +6,7 @@ class Formulaire extends React.Component {
 
     render() {
         return (
-            <div class="">
+            <div class="mid_box">
                 <div class="formulaire">
                     <h2>Nouveau post</h2>
                     <div>Date</div>
