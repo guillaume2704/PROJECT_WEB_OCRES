@@ -16,7 +16,7 @@ class Formulaire extends React.Component {
                     <input type="text" id="titre" ></input>
                     <br />
                     <div>Contenu</div>
-                    <input type="text" id="contenu" size="30" placeholder="Quoi de neuf ?"></input>
+                    <textarea type="text" id="contenu" size="30" placeholder="Quoi de neuf ?"></textarea>
                     <br /> <br />
                     <button class="bouton">Poster</button>
 

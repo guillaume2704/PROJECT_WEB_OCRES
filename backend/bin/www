@@ -11,8 +11,8 @@ var http = require('http');
 /**
  * Get port from environment and store in Express.
  */
-
-var port = normalizePort(process.env.PORT || '3000');
+//If the port 3003 is taken, then process.env.PORT will find one free
+var port = normalizePort(process.env.PORT || '3003');
 app.set('port', port);
 
 /**
