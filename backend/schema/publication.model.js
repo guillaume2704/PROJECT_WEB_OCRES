@@ -13,7 +13,7 @@ const publicationSchema = new mongoose.Schema({
         required: true
 
     },
-    descritpion: {
+    description: {
         type: String,
         required: true
 

@@ -2,9 +2,17 @@ var express = require('express');
 var router = express.Router();
 const Publication = require('../controller/publication.controller.js');
 
-// Get all
+// Récuperer toutes les publications
 router.get('/', Publication.findAll);
 
+//Récupérer une seule publication
+router.get('/:title', Publication.findByTitle);
+
+// Ajouter une nouvelle publication
+router.post('/', Publication.saveOne);
+
+// Supprimer une publication
+// router.delete('/:title', Publication.);
 
 /* GET users listing. */
 // To get to this path : localhost:3003/users/
@@ -13,10 +21,10 @@ router.get('/', Publication.findAll);
 //   next();
 // });
 
-router.post("/", function (req, res, next) {
-  res.send("publication poster ! ");
-  next();
-});
+// router.post("/", function (req, res, next) {
+//   res.send("publication poster ! ");
+//   next();
+// });
 
 // To get to this path : localhost:3003/users/1
 // router.get("/1", function (req, res, next) {

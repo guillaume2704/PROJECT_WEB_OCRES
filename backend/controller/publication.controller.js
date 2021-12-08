@@ -8,7 +8,7 @@ function findAll(req, res) {
             if (result.length > 0) {
                 res.json(result)
             } else {
-                res.status(202).json({ message: 'no publication available' })
+                res.status(202).json({ message: 'pas de publication disponible' })
             }
         })
         .catch((err) => {
@@ -18,8 +18,8 @@ function findAll(req, res) {
 
 // Function to get one by name
 function findByTitle(req, res) {
-    const lastNameParam = req.params.name;
-    return Publication.find({ lastName: lastNameParam })
+    const titleConst = req.params.title;
+    return Publication.find({ title: titleConst })
         .exec()
         .then((result) => {
             if (result.length > 0) {
@@ -33,7 +33,7 @@ function findByTitle(req, res) {
         })
 }
 
-// Function add one Publication to database
+// Ajouter une nouvelle publication à la database
 function saveOne(req, res) {
     const newPublication = new Publication(req.body);
 
