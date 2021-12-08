@@ -6,6 +6,7 @@ var mongoose = require("mongoose");
 
 var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
+var profilesRouter = require("./routes/profiles");
 
 // Connexion à MONGODB
 mongoose.connect('mongodb+srv://mariednt21:sa4ygi52@cluster0.7clel.mongodb.net/myFirstDatabase?retryWrites=true&w=majority',
@@ -19,13 +20,21 @@ mongoose.connect('mongodb+srv://mariednt21:sa4ygi52@cluster0.7clel.mongodb.net/m
 // Créer une aépplication express
 var app = express();
 
-// app.use(logger("dev"));
-// app.use(express.json());
-// app.use(express.urlencoded({ extended: false }));
-// app.use(cookieParser());
+app.use((req, res, next) => {
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content, Accept, Content-Type, Authorization');
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, PATCH, OPTIONS');
+    next();
+});
+
+app.use(logger("dev"));
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+app.use(cookieParser());
 
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
+app.use("/profiles", profilesRouter);
 
 //pour pouvoir y accéder depuis les autres fichier du projet dont le serveur : www
 module.exports = app;

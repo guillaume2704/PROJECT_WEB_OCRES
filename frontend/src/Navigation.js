@@ -2,6 +2,7 @@ import React from 'react';
 import App from './App';
 import './App.css';
 import Formulaire from './components/Formulaire';
+import Dashboard from "./pages/Dashboard";
 import {
     BrowserRouter as Router,
     Routes,
@@ -33,7 +34,7 @@ class Navigation extends React.Component {
 
                         <Routes>
                             <Route path="/" element={<App />} />
-                            <Route path="/poster" element={<Formulaire />} />
+                            <Route path="/poster" element={<Dashboard />} />
                         </Routes>
 
 
