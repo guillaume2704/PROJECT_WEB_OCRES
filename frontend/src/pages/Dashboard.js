@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import ReactDOM from "react-dom";
 import '../index.css';
+import AppTest from "./AppTest";
 
 import ApiProfile from "./ApiProfile";
 
@@ -159,23 +160,25 @@ class Dashboard extends React.Component {
         //     return <div>Loading...</div>
         // }
         // else {
-        console.log("RENDER : " + profiles.data);
+        console.log("RENDER : " + profiles);
+
+
         return (
 
             <div class="dashboard">
                 <div className="container-fluid">
-                    <div className='table_profiles'>
-                        {/* <table>
-                            <tr>
-                                <th>FirstName</th>
-                                <th>LastName</th>
-                                <th>Age</th>
-                                <th>Country</th>
-                                <th>City</th>
+                    <div >
+                        <AppTest />
+                        <table>
+                            {/* <tr>
+                                <th>FirstName </th>
+                                <th>LastName </th>
+                                <th>Age </th>
+                                <th>Country </th>
+                                <th>City </th>
+                            </tr> */}
 
-                               
-                            </tr>
-                            {profiles.data.map(item => (
+                            {/* {profiles.data.map((item, key) => (
                                 <tr>
                                     <td>{item.firstName}</td>
                                     <td>{item.lastName}</td>
@@ -184,8 +187,9 @@ class Dashboard extends React.Component {
                                     <td>{item.city}</td>
                                     <td><button type="button" className="col-auto" onClick={() => this.AddProfileOnUpdate(item)}>Update</button></td>
                                 </tr>
-                            ))}
-                        </table> */}
+                            ))} */}
+
+                        </table>
                     </div>
 
                     <div className="delete">

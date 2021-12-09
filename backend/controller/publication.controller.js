@@ -19,13 +19,14 @@ function findAll(req, res) {
 // Function to get one by name
 function findByTitle(req, res) {
     const titleConst = req.params.title;
+    console.log("findByTitle : " + titleConst);
     return Publication.find({ title: titleConst })
         .exec()
         .then((result) => {
             if (result.length > 0) {
                 res.json(result)
             } else {
-                res.status(202).json({ message: 'no publication found' })
+                res.status(202).json({ message: 'pas de publication disponible' })
             }
         })
         .catch((err) => {
@@ -56,14 +57,14 @@ function saveOne(req, res) {
 // Delete one Publication of Database
 async function deleteByLastName(req, res) {
 
-    const nameParam = req.params.name;
-
+    const nameParam = req.params.title;
+    console.log("Deletebylastname : " + nameParam);
     try {
-        const result = await Publication.deleteOne({ lastName: nameParam });
+        const result = await Publication.deleteOne({ title: nameParam });
         if (result) {
             res.json({ message: `${result.deletedCount} deleted` });
         } else {
-            res.status(404).json({ message: `Publication not found` });
+            res.status(404).json({ message: `pas de publication disponible` });
         }
     } catch (err) {
         res.status(500).json(err);
@@ -79,7 +80,7 @@ function updatePublication(req, res) {
             if (result) {
                 res.json({ message: `${result.modifiedCount} updated` })
             } else {
-                res.status(404).json({ message: `Publication not found` })
+                res.status(404).json({ message: `pas de publication disponible` })
             }
         })
         .catch((err) => {

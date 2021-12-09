@@ -5,7 +5,7 @@ import Profile from "./components/Profile";
 import Stars from './components/Stars';
 import Cars from './components/Cars';
 import Graphe from './components/Graphe';
-import Publications from './components/Publications';
+import AppTest from './pages/AppTest';
 // import ReactDOM from "react-dom"; 
 
 // Importer notre API Publication
@@ -19,7 +19,7 @@ var urls = [
   "https://api.nasa.gov/planetary/apod?api_key=g5OQbgckhrUaLRMKNcNVRYtKuCmj41mvfTLhRe3T",
   "https://api.github.com/users/defunkt",
   "https://forza-api.tk/",
-  "https://localhost:3003/users",
+  "http://localhost:3003/users",
 ]
 
 function checkStatus(response) {
@@ -43,7 +43,7 @@ class App extends React.Component {
       nasa: [],
       users: [],
       cars: [],
-      graphe: [],
+      // graphe: [],
       publications: [], //Chargement des données de notre API
       isLoaded: false,
     }
@@ -63,7 +63,7 @@ class App extends React.Component {
         const data_nasa = data[2];
         const data_user = data[3];
         const data_cars = data[4];
-        const data_publications = data[6];
+        const data_publications = data[5];
         this.setState({
           isLoaded: true,
           food: data_food,
@@ -75,11 +75,13 @@ class App extends React.Component {
         })
 
         console.log(this.state);
+
       })
 
   }
   render() {
     var { food, nasa, users, cars, graphe, publications } = this.state;
+    console.log("PUBLICATIONS :" + publications);
     return (
 
       <div className="App">
@@ -116,7 +118,7 @@ class App extends React.Component {
 
                   <div class="col-12 col-sm-11 col-md-6 col-lg-6 col-xl-6">
                     <Graphe
-                      item={graphe}
+                      item={publications}
                     />
                   </div>
                 </div>
@@ -126,7 +128,9 @@ class App extends React.Component {
 
           <div class="row">
             <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
-
+              <div class="mid_box">
+                <AppTest />
+              </div>
               {/* <Publications /> */}
               <br /> <br /> <br /> <br />
 

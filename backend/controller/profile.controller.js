@@ -55,9 +55,9 @@ function saveOne(req, res) {
 
 // Delete one Profile of Database
 async function deleteByLastName(req, res) {
-    console.log("test");
-    const nameParam = req.params.name;
 
+    const nameParam = req.params.name;
+    console.log("controller" + nameParam);
     try {
         const result = await Profile.deleteOne({ lastName: nameParam });
         if (result) {

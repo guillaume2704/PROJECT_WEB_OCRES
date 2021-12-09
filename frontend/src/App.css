@@ -239,6 +239,28 @@ nav
 .bouton
 {
  color: white;
+  background-color: #7cb2c4; 
+ border: 2px solid #7cb2c4;
+ margin : 1em;
+ padding : 1em;
+ border-radius: 1em;
+ 
+}
+
+.bouton:hover {
+  background-color: #cc97c8; 
+  border: 2px solid #ffffff;
+  
+  color: white;
+}
+
+.boutonImage
+{
+  /* background:url(./poubelle.png); */
+  padding :1em;
+  border: 2px solid #4fa5c2;
+  height: 100%;
+  width: 100%;
 }
 
 .navigation
@@ -254,4 +276,9 @@ nav
 .CartesianGrid
 {
   width: 90%;
+}
+
+.publi
+{
+  border-bottom: 1px solid #030303;
 }

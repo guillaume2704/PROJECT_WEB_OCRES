@@ -34,7 +34,7 @@ class Navigation extends React.Component {
 
                         <Routes>
                             <Route path="/" element={<App />} />
-                            <Route path="/poster" element={<Dashboard />} />
+                            <Route path="/poster" element={<Formulaire />} />
                         </Routes>
 
 

@@ -1,96 +1,40 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import ReactDOM from "react-dom";
 import '../index.css';
-import '../App.css';
+import axios from "axios";
 
-// Importer notre API Publication
-import Api from "../api.js";
-const apiPublication = new Api();
 
-class Publications extends React.Component {
+function Publications() {
+    const [foodList, setFoodList] = useState([])
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            publi: [],
-            deleteValue: "",
-            title: "", date: "", description: "",
-            updateFirstName: "", updateLastName: "", updateAge: "", updateCountry: "", updateCity: "", updateId: "",
-            successValue: "",
-            successUpdate: "",
-            isLoaded: false,
-        };
+    useEffect(() => {
+        axios.get("http://localhost:3003/profiles").then((response) => {
+            setFoodList(response.data);
+        });
+    }, []);
 
-        this.handleChange = this.handleChange.bind(this);
 
-    }
+    return (
 
-    componentDidMount() {
-        apiPublication
-            .getAllPublications()
-            .then(data => {
-                // assign to requested URL as define in array with array index.
-                const data_publi = data;
-                this.setState({
-                    isLoaded: true,
-                    publi: data_publi
-                })
-                console.log(this.state);
-            })
-    }
-
-    handleChange(choice, event) {
-        switch (choice) {
-            case 'delete':
-                this.setState({ deleteValue: event.target.value });
-                break;
-            case 'title':
-                this.setState({ title: event.target.value });
-                break;
-            case 'date':
-                this.setState({ date: event.target.value });
-                break;
-            case 'description':
-                this.setState({ description: event.target.value });
-                break;
-            case 'updateFirstName':
-                this.setState({ updateFirstName: event.target.value });
-                break;
-            case 'updateLastName':
-                this.setState({ updateLastName: event.target.value });
-                break;
-            case 'updateAge':
-                this.setState({ updateAge: event.target.value });
-                break;
-            default:
-                break;
-        }
-    }
-
-    render() {
-
-        var { isLoaded, publi } = this.state;
-
-        // if (!isLoaded) {
-        //     return <div>Loading...</div>
-        // }
-        // else {
-        return (
-            <div class="mid_box">
-                {publi.data.map(item => (
-                    <tr>
-                        <div>{item.title}</div>
-                        <div>{item.date}</div>
-                        <div>{item.description}</div>
-                    </tr>
-                ))
+        <table>
+            <tbody>
+                {
+                    foodList.map((val, key) => (
+                        <tr key={`profile : ${key}`}>
+                            <th> {val.firstName} </th>
+                            <th> {val.lastName} </th>
+                            <th> {val.age} </th>
+                            <th> {val.country} </th>
+                            <th> {val.city} </th>
+                        </tr>
+                    ))
                 }
-            </div>
+            </tbody>
+        </table>
 
-
-        );
-        // }
-    }
+    );
 
 }
+
 
 export default Publications;

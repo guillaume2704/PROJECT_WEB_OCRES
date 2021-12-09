@@ -8,7 +8,6 @@ router.get('/', Profile.findAll);
 // Get one
 router.get('/:name', Profile.findByLastName);
 
-
 // Post one
 router.post('/', Profile.saveOne);
 

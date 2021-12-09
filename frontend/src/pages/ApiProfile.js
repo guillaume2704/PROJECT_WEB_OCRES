@@ -6,6 +6,7 @@ export default class ApiProfile {
     }
 
     deleteProfile(name) {
+        console.log("axios" + name);
         axios.delete(`http://localhost:3003/Profiles/${name}`, { crossdomain: true })
     }
 

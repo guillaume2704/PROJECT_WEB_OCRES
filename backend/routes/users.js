@@ -11,6 +11,12 @@ router.get('/:title', Publication.findByTitle);
 // Ajouter une nouvelle publication
 router.post('/', Publication.saveOne);
 
+// Delete one
+router.delete('/:title', Publication.deleteByLastName);
+
+// Update one
+router.put('/:id', Publication.updatePublication);
+
 // Supprimer une publication
 // router.delete('/:title', Publication.);
 
