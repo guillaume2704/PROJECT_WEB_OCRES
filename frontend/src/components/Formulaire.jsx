@@ -4,6 +4,7 @@ import '../App.css';
 import Api from "../api.js";
 const apiPublication = new Api();
 
+// Class etant dans une route, pour poster et supprimer des elements
 class Formulaire extends React.Component {
     constructor(props) {
         super(props);
@@ -20,7 +21,7 @@ class Formulaire extends React.Component {
         this.handleChange = this.handleChange.bind(this);
     }
 
-
+    //Methode suprimer des publications
     DeletePublication() {
         var title = this.state.deleteValue;
         if (window.confirm(`Voulez-vous vraiment supprimer : ${title}`)) {
@@ -30,6 +31,7 @@ class Formulaire extends React.Component {
         }
     }
 
+    //Methode creation de publications
     CreatePublication() {
         const publication = {
             title: this.state.title,
@@ -49,7 +51,7 @@ class Formulaire extends React.Component {
                 }
             })
     }
-
+    //Methode pour changer les valeurs entrées par l'utilisateur dans les champs input
     handleChange(choice, event) {
         switch (choice) {
             case 'delete':

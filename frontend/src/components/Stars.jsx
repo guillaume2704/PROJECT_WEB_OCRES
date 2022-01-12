@@ -2,6 +2,7 @@ import React from "react";
 import '../index.css';
 import '../App.css';
 
+//COMPONENT etoiles , change tous les jours de données
 const Stars = ({ item }) => (
 
     <div class="mid_box">

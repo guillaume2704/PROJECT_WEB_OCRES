@@ -1,7 +1,9 @@
+// recupere  notre modele de données à rentrer dans la bdd
 const Publication = require('../schema/publication.model.js').Publication;
 
 // Fonction pour pouvoir récuperer toutes les publications dans la base de données
 function findAll(req, res) {
+    // METHODE find() pour une requete GET
     return Publication.find()
         .exec()
         .then((result) => {
@@ -18,7 +20,9 @@ function findAll(req, res) {
 
 // Function to get one by name
 function findByTitle(req, res) {
+    //récupere une titre specifique
     const titleConst = req.params.title;
+    // METHODE find() pour une requete GET
     console.log("findByTitle : " + titleConst);
     return Publication.find({ title: titleConst })
         .exec()
@@ -36,8 +40,9 @@ function findByTitle(req, res) {
 
 // Ajouter une nouvelle publication à la database
 function saveOne(req, res) {
+    //recupere le nouveau post rentré par utilisateur
     const newPublication = new Publication(req.body);
-
+    // METHODE save() pour une requete POST
     return newPublication
         .save()
         .then((result) => {
@@ -56,9 +61,10 @@ function saveOne(req, res) {
 
 // Delete one Publication of Database
 async function deleteByLastName(req, res) {
-
+    //récupere une titre specifique
     const nameParam = req.params.title;
     console.log("Deletebylastname : " + nameParam);
+    // METHODE deleteOne() pour une requete DELETE
     try {
         const result = await Publication.deleteOne({ title: nameParam });
         if (result) {

@@ -2,6 +2,7 @@ import React from "react";
 import '../index.css';
 import '../App.css';
 
+// COMPONENT, affichage de de nourriture aleatoire
 const Food = ({ item }) => (
     <div class="mid_box">
 

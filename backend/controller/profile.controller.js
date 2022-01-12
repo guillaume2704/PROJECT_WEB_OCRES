@@ -1,7 +1,11 @@
+// recupere  notre modele de données à rentrer dans la bdd
 const Profile = require('../models/profile.model.js').Profile;
+
+//Le controller 
 
 // Function to get all profile in database
 function findAll(req, res) {
+    // METHODE find() pour une requete GET
     return Profile.find()
         .exec()
         .then((result) => {
@@ -18,7 +22,9 @@ function findAll(req, res) {
 
 // Function to get one by name
 function findByLastName(req, res) {
+    //récupere une titre specifique
     const lastNameParam = req.params.name;
+    // METHODE find() pour une requete GET
     return Profile.find({ lastName: lastNameParam })
         .exec()
         .then((result) => {
@@ -35,8 +41,9 @@ function findByLastName(req, res) {
 
 // Function add one Profile to database
 function saveOne(req, res) {
+    //recupere le nouveau post rentré par utilisateur
     const newProfile = new Profile(req.body);
-
+    // METHODE save() pour une requete POST
     return newProfile
         .save()
         .then((result) => {
@@ -55,9 +62,11 @@ function saveOne(req, res) {
 
 // Delete one Profile of Database
 async function deleteByLastName(req, res) {
-
+    //récupere une titre specifique
     const nameParam = req.params.name;
+    // verif console
     console.log("controller" + nameParam);
+    // METHODE deleteOne() pour une requete DELETE
     try {
         const result = await Profile.deleteOne({ lastName: nameParam });
         if (result) {

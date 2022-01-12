@@ -3,10 +3,11 @@ import ReactDOM from "react-dom";
 import '../index.css';
 import axios from "axios";
 
-
+//COMPONENT pour les publications récuperer de notre API
 function Publications() {
     const [foodList, setFoodList] = useState([])
 
+    //récupérer avec AXIOS toutes les publications de la base de données
     useEffect(() => {
         axios.get("http://localhost:3003/profiles").then((response) => {
             setFoodList(response.data);

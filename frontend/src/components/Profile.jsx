@@ -1,6 +1,7 @@
 import React from "react";
 import '../index.css';
 
+//COMPONENT profile
 const Profile = ({ item }) => (
     <div class="side_box">
         <img src={item.avatar_url} alt="profil" class="pp"></img>
@@ -11,8 +12,8 @@ const Profile = ({ item }) => (
         {item.bio}
         <br />
         <br />
-        <h3> Follow me on my blog : {item.blog}</h3>
-        <h3> Member since : {item.created_at}</h3>
+        <h3> Mon site pro : {item.blog}</h3>
+        <h3> Membre depuis : {item.created_at}</h3>
     </div>
 );
 

@@ -1,5 +1,6 @@
 import axios from "axios";
 
+//utilisationd de AXIOS pour réaliser notre requete CRUD
 export default class Api {
     getAllProfiles() {
         return axios.get("http://localhost:3003/users", { crossdomain: true })
